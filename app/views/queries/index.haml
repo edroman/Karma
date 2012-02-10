@@ -1,0 +1,11 @@
+- title "Queries for " + current_user.name
+
+#queries_index
+  %table
+    %tr
+      %th Question
+    - @queries.each do |query|
+      %tr
+        %td= query.question
+  %p
+    = link_to 'New Query', new_query_path, :class => 'green_button'

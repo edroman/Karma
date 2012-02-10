@@ -1,0 +1,6 @@
+- title "Edit Query for " + @query.user.try(:name) + " - Admin"
+%h1 Administrative View: Editing query
+= render 'form'
+= link_to 'show', admin_query_path(@query)
+|
+= link_to 'Index', admin_queries_path

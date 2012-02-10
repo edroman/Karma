@@ -1,0 +1,25 @@
+footer
+  display: inline-block
+  position: absolute
+  z-index: 0
+  bottom: 0
+  width: 100%
+  height: 76px
+  @include box-shadow(0, -2px, 2px, 0, #666)
+
+  background: $footer-color
+  color: $footer-font-color
+
+  font-size: .9em
+
+  footer_inner
+    display: block
+    position: relative
+    margin: 0 auto
+    padding: 30px
+    @include min-max-width
+    #copyright
+    #footermenu
+      padding: 0 0 0 20px
+    a
+      color: $footer-font-color

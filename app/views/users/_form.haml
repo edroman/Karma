@@ -1,0 +1,6 @@
+= form_for @user do |f|
+  = render :partial => "error_messages", :locals => { :resource => @user }
+  .field
+    = f.text_field :email, :placeholder => 'YourEmail@domain.com'
+  .actions
+    = f.submit 'Save', :class => 'blue_button'

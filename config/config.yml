@@ -1,0 +1,35 @@
+development:
+  airbrake_api_key: 00c4539ab0674e926bd62aa155778856
+  twitter_token: 4S6qrVVnp6eC2xlWGG5g
+  twitter_secret: D92rdJ3v7adGkxNohhx9r7WnFe5Bk3x5Plv1YkUr8A
+  linkedin_token: r0c86logo9j0
+  linkedin_secret: tu2F3ykCifkgAkox
+  facebook_token: 292130894158710
+  facebook_secret: 8f66bc67685466fc043a751404c4b692
+
+staging:
+  airbrake_api_key: 00c4539ab0674e926bd62aa155778856
+  twitter_token: 4S6qrVVnp6eC2xlWGG5g
+  twitter_secret: D92rdJ3v7adGkxNohhx9r7WnFe5Bk3x5Plv1YkUr8A
+  linkedin_token: r0c86logo9j0
+  linkedin_secret: tu2F3ykCifkgAkox
+  facebook_token: 292130894158710
+  facebook_secret: 8f66bc67685466fc043a751404c4b692
+
+production:
+  airbrake_api_key: 00c4539ab0674e926bd62aa155778856
+  twitter_token: 4S6qrVVnp6eC2xlWGG5g
+  twitter_secret: D92rdJ3v7adGkxNohhx9r7WnFe5Bk3x5Plv1YkUr8A
+  linkedin_token: r0c86logo9j0
+  linkedin_secret: tu2F3ykCifkgAkox
+  facebook_token: 292130894158710
+  facebook_secret: 8f66bc67685466fc043a751404c4b692
+
+test:
+  airbrake_api_key: 00c4539ab0674e926bd62aa155778856
+  twitter_token: 4S6qrVVnp6eC2xlWGG5g
+  twitter_secret: D92rdJ3v7adGkxNohhx9r7WnFe5Bk3x5Plv1YkUr8A
+  linkedin_token: r0c86logo9j0
+  linkedin_secret: tu2F3ykCifkgAkox
+  facebook_token: 292130894158710
+  facebook_secret: 8f66bc67685466fc043a751404c4b692

@@ -1,0 +1,22 @@
+- title "Queries Index - Admin"
+
+%h1 Administrative View: Listing queries
+%table
+  %tr
+    %th UserID
+    %th Email
+    %th Question
+    %th Mentor
+    %th
+    %th
+    %th
+  - @queries.each do |query|
+    %tr
+      %td= query.user_id
+      %td= query.user.try(:email)
+      %td= query.question
+      %td= query.mentor.try(:name)
+      %td= link_to 'Show', admin_query_path(query)
+      %td= link_to 'Edit', edit_admin_query_path(query)
+      %td= link_to 'Destroy', admin_query_path(query), confirm: 'Are you sure?', method: :delete
+= link_to 'New Query', new_admin_query_path

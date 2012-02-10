@@ -1,0 +1,40 @@
+.error, .alert, .notice, .success, .info
+  padding: 0.8em
+  margin: 0 auto 10px
+  border: 2px solid #999
+  @include radius(5px)
+
+.error, .alert
+  background: $error-background
+  border-color: $error-border
+  color: $error-color
+  a
+    color: $error-link
+
+.notice, .success
+  background: $success-background
+  border-color: $success-border
+  color: $success-color
+  a
+    color: $success-link
+
+.info
+  background: $info-background
+  border-color: $info-border
+  color: $info-color
+  a
+    color: $info-link
+
+.notice, .alert, .success
+  position: relative
+  p
+    float: left
+  .close
+    position: absolute
+    right: 0
+    top: 2px
+    height: 34px
+    width: 34px
+    background: asset-url("close_icon.png", image) no-repeat 0 0
+    cursor: pointer
+    opacity: .3

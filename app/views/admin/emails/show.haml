@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Subject:
+  = @email.subject
+%p
+  %b Body_Plain:
+  = @email.body_plain
+%p
+  %b Body_HTML:
+  = @email.body_html
+%p
+  %b Opened:
+  = @email.opened
+%p
+  %b Link clicked:
+  = @email.link_clicked
+%p
+  %b Sender:
+  = @email.sender.name
+%p
+  %b Receiver:
+  = @email.receiver.name
+%p
+  %b Query:
+  = @email.query.question
+
+= link_to 'Edit', edit_admin_email_path(@email)
+\|
+= link_to 'Back', admin_emails_path

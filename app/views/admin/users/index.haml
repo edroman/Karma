@@ -1,0 +1,16 @@
+- title "Users Index - Admin"
+
+%h1 Listing Users
+%table
+  %tr
+    %th User
+    %th Email
+    %th
+  - @users.each do |user|
+    %tr
+      %td
+        = link_to user.try(:name), admin_user_path(user)
+      %td
+        = user.email
+
+      %td= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete

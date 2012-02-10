@@ -1,0 +1,37 @@
+= form_for [:admin, @email] do |f|
+  = render :partial => "error_messages", :locals => { :resource => @email }
+  .field
+    = f.label :subject
+    = f.text_field :subject
+    %br/
+  .field
+    = f.label :body_plain
+    = f.text_field :body_plain
+    %br/
+  .field
+    = f.label :body_html
+    = f.text_field :body_html
+    %br/
+  .field
+    = f.label :opened
+    = f.check_box :opened
+    %br/
+  .field
+    = f.label :link_clicked
+    = f.check_box :link_clicked
+    %br/
+  .field
+    = f.label :sender
+    = collection_select :email, :sender_id, User.all, :id, :name
+    %br/
+  .field
+    = f.label :receiver
+    = collection_select :email, :receiver_id, User.all, :id, :name
+    %br/
+  .field
+    = f.label :query
+    = collection_select :email, :query_id, Query.all, :id, :question
+    %br/
+  .actions
+    = f.submit 'Save'
+

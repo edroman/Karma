@@ -1,0 +1,18 @@
+- title "House Rules"
+- font "http://fonts.googleapis.com/css?family=Permanent+Marker|Special+Elite"
+
+#house_rules
+  %h1 House Rules
+  %ol
+    %li I will spend at least 30 minutes each week trying to help an entrepreneur.
+    %li I will not talk about Fight Club.
+    %li I will not spam!
+    %li I will only invite those who can meet these rules and help promote entrepreneurship.
+  = form_for @user do |f|
+    .field
+      = f.hidden_field :house_rules, :value => true
+    .actions
+      = f.submit 'I agree! Cooperation is key!', :class => 'blue_button'
+      %span{:style => "margin: 0 0 0 40px"}
+        = link_to sign_out_path do
+          Nah, I'm too busy.

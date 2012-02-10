@@ -1,0 +1,69 @@
+body
+  height: 100%
+  margin: 0
+  padding: 0
+  background: #FFF
+  font-size: 14px
+  font-family: $body-font
+
+container
+  display: block
+  position: relative
+  min-height: 100%
+  width: 100%
+
+content
+  display: inline-block
+  width: 100%
+  padding-bottom: 76px
+  background: #FFF
+
+  content_inner
+    display: block
+    position: relative
+    margin: 0 auto
+    padding: 10px 30px 30px 30px
+    @include min-max-width
+
+h1
+  font-size: 2em
+  margin: 20px 0 0 0
+
+h2
+  font-size: 1.7em
+
+p
+  margin: 20px
+  line-height: 1.7em
+
+a
+  color: $text-color
+  text-decoration: none
+  &:hover
+    color: $link-color
+    text-decoration: none
+
+.clear
+  clear: both
+
+.hide
+  display: none
+
+.nodec
+  text-decoration: none !important
+  border-bottom: none !important
+
+.relative
+  position: relative
+
+.absolute
+  position: absolute
+
+.pointer
+  cursor: pointer
+
+.content_wrapper
+  width: 950px
+
+.red
+  color: #8a1f11

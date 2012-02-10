@@ -1,0 +1,32 @@
+%h1 Listing emails
+
+%table
+  %tr
+    %th Subject
+    %th Body_Plain
+    %th Body_HTML
+    %th Opened
+    %th Link clicked
+    %th Sender
+    %th Receiver
+    %th
+    %th
+    %th
+
+  - @emails.each do |email|
+    %tr
+      %td= email.subject
+      %td= email.body_plain
+      %td= email.body_html
+      %td= email.opened
+      %td= email.link_clicked
+      %td= email.sender.name
+      %td= email.receiver.name
+      %td= email.query.question
+      %td= link_to 'Show', admin_email_path(email)
+      %td= link_to 'Edit', edit_admin_email_path(email)
+      %td= link_to 'Destroy', admin_email_path(email), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Email', new_admin_email_path

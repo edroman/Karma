@@ -1,0 +1,41 @@
+@mixin button($start_color, $end_color, $color, $shadow_color)
+  position: relative
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff
+  box-shadow: inset 0px 1px 0px 0px #ffffff
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, $start_color), color-stop(1, $end_color))
+  background: -moz-linear-gradient(center top, $start_color 5%, $end_color 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$start_color, endColorstr=$end_color)
+  background-color: $start_color
+  -moz-border-radius: 6px
+  -webkit-border-radius: 6px
+  border-radius: 6px
+  border: 1px solid $start_color
+  display: inline-block
+  color: $color
+  font-family: arial
+  font-size: 15px
+  font-weight: bold
+  padding: 6px 24px
+  text-decoration: none
+  text-shadow: 1px 1px 0px $shadow_color
+  &:hover
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, $end_color), color-stop(1, $start_color))
+    background: -moz-linear-gradient(center top, $end_color 5%, $start_color 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$end_color, endColorstr=$start_color)
+    background-color: $end_color
+  &:active
+    position: relative
+    top: 1px
+
+.blue_button
+  @include button($main-color, $main-color-highlight, #ffffff, #528ecc)
+
+.green_button
+  @include button(#8CB332, #C3DD82, #406A24, #D4ED95)
+
+.red_button
+  @include button(#FF0000, #BF3030, #ffffff, #FF7373)
+
+.grey_button
+  @include button(#ededed, #dfdfdf, #777777, #ffffff)

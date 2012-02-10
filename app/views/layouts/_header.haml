@@ -1,0 +1,18 @@
+%header#header
+  .inner_container
+    = link_to root_path, :id => 'logo' do
+      कर्म &#8226; Karma
+    %menu
+      - if current_user
+        = current_user.name
+        &#8226;
+        = link_to 'Sign out', :sign_out
+      - elsif current_page?(root_path)
+
+      - else
+        = link_to "/auth/twitter" do
+          = image_tag 'sign_up_twitter_small.png'
+        = link_to "/auth/linkedin" do
+          = image_tag 'sign_up_linkedin_small.png'
+        = link_to "/auth/facebook" do
+          = image_tag 'sign_up_facebook_small.png'

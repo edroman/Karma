@@ -1,0 +1,28 @@
+header#header
+  position: relative
+  display: inline-block
+  padding: 0
+  height: 58px
+  width: 100%
+  background-color: $header-color
+  text-align: center
+  color: $header-font-color
+  @include box-shadow(0, 2px, 2px, 0, #666)
+  .inner_container
+    display: block
+    position: relative
+    margin: 0 auto
+    padding: 10px 30px
+    @include min-max-width
+    text-align: left
+    color: $header-font-color
+    #logo
+      font-family: "Apple Chancery", "Zapf Chancery", cursive
+      color: $header-font-color
+      font-size: 3em
+    menu
+      position: absolute
+      right: 30px
+      top: 10px
+      a
+        color: $header-font-color

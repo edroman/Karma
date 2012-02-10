@@ -1,0 +1,20 @@
+.field_with_errors
+  display: inline
+  input, textarea
+    border: 2px $error_color solid !important
+    label
+      color: $error-color
+
+#error_explanation
+  padding: 0.8em
+  margin: 0 auto 10px
+  border: 2px solid $lightgrey
+  @include radius(5px)
+  background: $error-background
+  border-color: $error-border
+  color: $error-color
+  text-align: left
+  ul
+    margin: 10px 0 5px 0
+    li
+      margin: 5px 0 5px 1em

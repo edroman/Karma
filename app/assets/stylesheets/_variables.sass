@@ -1,0 +1,97 @@
+// Global variables
+
+// Fonts
+
+$h1-font: "Helvetica Neue", Arial, Helvetica, sans-serif
+$h2-font: "Helvetica Neue", Arial, Helvetica, sans-serif
+$h3-font: "Helvetica Neue", Arial, Helvetica, sans-serif
+$body-font: "Helvetica Neue", Arial, Helvetica, sans-serif
+
+// Colors
+
+$background-color: #FFF
+$main-color: #0088ba
+$main-color-highlight: #00b7fb
+
+$link-color: $main-color
+
+$secondary-color: #ff8e00
+//$secondary-color-highlight:
+
+$header-color: #418ab5
+$header-font-color: #FFF
+
+$footer-color: #efefea
+$footer-font-color: #666
+
+$notification-dot-color: red
+
+$h1-color: #111
+$body-color: #111
+
+$text-color: #666
+$text-color-subtle: #999
+$text-color-em: #000
+
+$success-background: #e6efc2
+$success-border: #c6d880
+$success-color: #264409
+$success-link: #264409
+
+$error-background: #fbe3e4
+$error-border: #fbc2c4
+$error-color: #8a1f11
+$error-link: #8a1f11
+
+$info-background: #d5edf8
+$info-border: #92cae4
+$info-color: #205791
+$info-link: #205791
+
+// mixins
+
+@mixin min-max-width
+  min-width: 500px
+  max-width: 950px
+
+@mixin bounds
+  max-width: 950px
+  min-width: 400px
+
+$global-radius: 10px
+
+@mixin radius($border-radius:$global-radius)
+  border-radius: $border-radius
+  -moz-border-radius: $border-radius
+  -webkit-border-radius: $border-radius
+
+$global-h-shadow: -10px
+$global-v-shadow: 10px
+$global-blur: 50px
+$global-spread: 0px
+$global-shadow-color: rgba(0,0,0,0.1)
+
+@mixin box-shadow($h-shadow:$global-h-shadow, $v-shadow:$global-v-shadow, $blur:$global-blur, $spread:$global-spread, $shadow-color:$global-shadow-color)
+  -moz-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color
+  box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color
+
+@mixin rotate($degrees)
+  transform: rotate($degrees)
+  -ms-transform: rotate($degrees) /* IE 9 */
+  -moz-transform: rotate($degrees) /* Firefox */
+  -webkit-transform: rotate($degrees) /* Safari and Chrome */
+  -o-transform: rotate($degrees) /* Opera */
+
+@mixin linear-gradient($top_color, $bottom_color)
+  background: -moz-linear-gradient(top,  $top_color, $bottom_color)
+  background: -webkit-gradient(linear, left top, left bottom, from($top_color), to($bottom_color))
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$topcolor', endColorstr='$bottom_color')
+
+@mixin pointer
+  cursor: pointer
+
+@mixin sprite
+  display: inline-block
+  vertical-align: middle
+  border: none

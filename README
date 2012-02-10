@@ -1,0 +1,88 @@
+# Dev Notes
+
+## 3rd Party API keys
+
+All api keys collected in the config/config.yml
+
+
+## Checking in Code and Deploying
+
+### When pulling
+
+Use rebase to make git a bit cleaner.
+
+    git pull --rebase origin master
+
+### Testing
+
+Test before deploying!
+
+    rake db:test:prepare # for creating/migrating test db
+    guard # for starting continious testing ("Press enter inside guard for running all specs")
+    rspec spec/ # for running specs. Please prefer guard over rspec spec/ command
+
+### Deploying to production / staging
+
+    rake deploy:staging
+
+or
+
+    rake deploy:production
+
+NOTE: Deploying to staging copies the production database to the staging server as part of the process.
+
+This will occasionally cause issues if migrations have already been run on staging but not yet on production.
+
+To deploy the code to staging manually: (assuming your remotes are set up correctly)
+
+    git push staging master
+    heroku restart
+    heroku restart workers
+
+## Database
+
+### Copy db from production / staging
+
+WARNING: This will clobber your local db files
+
+    rake heroku:pull
+
+or
+
+    rake heroku:pull TARGET=staging
+
+### Copy db from production to staging
+
+    heroku pgbackups:capture --app karma-production
+    heroku pgbackups:restore DATABASE `heroku pgbackups:url --app karma-production` --app karma-staging --confirm karma-staging
+
+### Copy db to production / staging
+
+WARNING: this will clobber your remote db files. NEVER do this.
+
+    rake heroku:push TARGET = staging
+
+or only in a dire circumstance
+
+    rake heroku:push TARGET = production
+
+Didn't work did it? If you can't figure out how, you shouldn't be doing it.
+
+
+## Misc Heroku Tasks
+
+### Script console on production / staging
+
+    heroku console --app karma-production
+
+or
+
+    heroku console --app karma-staging
+
+### Copy logs from production / staging
+
+    heroku logs --app karma-production
+
+or
+
+    heroku logs --app karma-staging
