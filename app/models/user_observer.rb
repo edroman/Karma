@@ -1,6 +1,7 @@
 class UserObserver < ActiveRecord::Observer
   def after_create(user)
     NotifierMailer.sign_up(user).deliver if !user.email.blank?
+    NotifierMailer.admin_new_user_alert(user).deliver
   end
 
   def after_update(user)

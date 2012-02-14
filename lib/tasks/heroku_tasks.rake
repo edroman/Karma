@@ -37,7 +37,7 @@ if Rails.env.development?
          'logging:expanded',
          'releases:basic',
          'pgbackups:auto-month'].each { |addon| add_addon(addon, heroku_app)}
-        execute("heroku addons:add deployhooks:email --app #{heroku_app} recipient=#{app}@trikro.com subject='[Heroku] {{app}} deployed to #{target}' body='{{user}} deployed {{head}} to {{url}} with {{git_log}}'", :continue_on_failure => true)
+        execute("heroku addons:add deployhooks:email --app #{heroku_app} recipient=edward.w.roman@gmail.com subject='[Heroku] {{app}} deployed to #{target}' body='{{user}} deployed {{head}} to {{url}} with {{git_log}}'", :continue_on_failure => true)
         execute("heroku domains:add #{target}.#{app}.#{tld} --app #{heroku_app}", :continue_on_failure => true)
         if target == 'production'
           execute("heroku domains:add www.#{app}.#{tld} --app #{heroku_app}", :continue_on_failure => true)

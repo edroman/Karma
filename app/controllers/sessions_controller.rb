@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 	  reset_session
-	  redirect_to root_url, :notice => "You've signed out! I will weep until your return"
+	  redirect_to root_url, :notice => "You've signed out! I will weep until your return."
   end
 
   def failure

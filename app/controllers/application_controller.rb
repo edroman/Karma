@@ -17,13 +17,11 @@ class ApplicationController < ActionController::Base
   def sign_up_next_step
     if current_user.email.blank?
       redirect_to add_email_path, :notice => "You signed up, but this site doesn't work without your email!"
-    elsif current_user.house_rules != true
-      redirect_to house_rules_user_path
     end
   end
 
   def authenticate
-    redirect_to root_path, :alert => "Fuck off you don't have access!" unless current_user
+    redirect_to root_path, :alert => "Sorry, you don't have access!" unless current_user
   end
 
 end

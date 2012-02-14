@@ -29,8 +29,8 @@
     = collection_select :email, :receiver_id, User.all, :id, :name
     %br/
   .field
-    = f.label :query
-    = collection_select :email, :query_id, Query.all, :id, :question
+    = f.label :need
+    = collection_select :email, :need_id, Need.all, :id, :body
     %br/
   .actions
     = f.submit 'Save'

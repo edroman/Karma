@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120107015000) do
+ActiveRecord::Schema.define(:version => 20120103010003) do
 
   create_table "emails", :force => true do |t|
     t.text     "subject"
@@ -21,16 +21,14 @@ ActiveRecord::Schema.define(:version => 20120107015000) do
     t.boolean  "link_clicked"
     t.integer  "sender_id"
     t.integer  "receiver_id"
-    t.integer  "query_id"
+    t.integer  "need_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "queries", :force => true do |t|
+  create_table "needs", :force => true do |t|
     t.integer  "user_id"
-    t.text     "question"
-    t.string   "status",     :default => "open"
-    t.integer  "mentor_id"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,11 +40,10 @@ ActiveRecord::Schema.define(:version => 20120107015000) do
     t.binary   "image"
     t.string   "email"
     t.string   "member"
-    t.boolean  "house_rules", :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "token"
     t.string   "secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

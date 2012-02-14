@@ -1,0 +1,22 @@
+- title "Needs Index - Admin"
+
+%h1 Administrative View: Listing needs
+%table
+  %tr
+    %th UserID
+    %th Email
+    %th Body
+    %th Helper
+    %th
+    %th
+    %th
+  - @needs.each do |need|
+    %tr
+      %td= need.user_id
+      %td= need.user.try(:email)
+      %td= need.body
+      %td= need.helper.try(:name)
+      %td= link_to 'Show', admin_need_path(need)
+      %td= link_to 'Edit', edit_admin_need_path(need)
+      %td= link_to 'Destroy', admin_need_path(need), confirm: 'Are you sure?', method: :delete
+= link_to 'New Need', new_admin_need_path

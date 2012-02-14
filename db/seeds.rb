@@ -6,6 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Note: All administrators are also mentors
+# Note: All administrators are also helpers
 User.find_or_create_by_uid_and_provider(name: "Ed Roman", provider: "facebook", uid: "1530982589", email: "edward.w.roman@gmail.com", member: "administrators")
-User.find_or_create_by_uid_and_provider(name: 'Tristan Kromer', provider: 'linkedin', uid: 'cQ2mnsYOKy', email: 'accounts@tristankromer.com', member: 'administrators')

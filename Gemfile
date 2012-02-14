@@ -3,7 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.3'
 #gem 'rake', '0.8.7'
 gem 'rake', '0.9.2.2' # version set for debugging rspec within RubyMine generating a "missing constant RDoc" error
-gem 'haml-rails'
+gem 'haml-rails' # TODO: DELETE
+gem 'slim'
 gem 'eventmachine', '1.0.0.beta.2' # version set for windows compatibility
 
 gem 'omniauth-twitter'

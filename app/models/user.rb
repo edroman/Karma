@@ -1,8 +1,16 @@
 class User < ActiveRecord::Base
   has_many :emails
-  has_many :queries
-  # Since the user already has_many queries, so we need to explicitly define the foreign key relationship
-  has_many :mentored_queries, :class_name => "Query", :foreign_key => "mentor_id"
+
+  # This stuff is required to allow parent to update children.  Useful for view that has multiple needs being edited in 1 form.
+  # Note that the needs_attributes= writer method is required for fields_for to correctly identify :needs as a collection, and the correct indices to be set in the form markup.
+  has_many :needs
+  accepts_nested_attributes_for :needs, :allow_destroy => true, :reject_if => lambda { |a| a[:content].blank? }
+  def needs_attributes=(attributes)
+    # Process the attributes hash
+  end
+
+  # Since the user already has_many needs, so we need to explicitly define the foreign key relationship
+  has_many :helped_needs, :class_name => "Need", :foreign_key => "helper_id"
 
   validates_presence_of :name
   validates_uniqueness_of :email, :case_sensitive => false
@@ -23,11 +31,8 @@ class User < ActiveRecord::Base
     name.sub(/ .*/, '') rescue ''
   end
 
-  def is_mentor?
-    return member == "administrators" || member == "mentors"
+  def has_needs?
+    !needs.blank?
   end
 
-  def has_open_queries?
-    !queries.where(:status => 'open').blank?
-  end
 end

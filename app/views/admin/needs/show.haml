@@ -1,0 +1,20 @@
+- title "Need for " + @need.user.try(:name) + " - Admin"
+
+%p#notice= notice
+Administrative View: Showing Need
+%p
+  %b UserID:
+  = @need.user_id
+%p
+  %b Email:
+  = @need.user.try(:email)
+%p
+  %b Body:
+  = @need.body
+%p
+  %b Helper:
+  = @need.helper.try(:name)
+
+= link_to 'Edit', edit_admin_need_path(@need)
+|
+= link_to 'Back', admin_needs_path

@@ -1,0 +1,6 @@
+- title "Edit Need for " + @need.user.try(:name) + " - Admin"
+%h1 Administrative View: Editing need
+= render 'form'
+= link_to 'show', admin_need_path(@need)
+|
+= link_to 'Index', admin_needs_path

@@ -1,0 +1,11 @@
+- title "Needs for " + current_user.name
+
+#needs_index
+  %table
+    %tr
+      %th Body
+    - @needs.each do |need|
+      %tr
+        %td= need.body
+  %p
+    = link_to 'New Need', new_need_path, :class => 'green_button'

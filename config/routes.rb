@@ -4,9 +4,8 @@ Karma::Application.routes.draw do
 
   resources :users, :only => [:update]
   match "/add_your_email" => "users#add_email", :as => :add_email
-  match "/house_rules" => "users#house_rules", :as => :house_rules_user
 
-  resources :queries, :only => [:new, :create] do
+  resources :needs, :only => [:new, :create] do
     get 'thanks', :on => :collection
   end
 
@@ -23,7 +22,7 @@ Karma::Application.routes.draw do
   namespace :admin do
     resources :emails
     resources :users
-    resources :queries
+    resources :needs
   end
 
 end

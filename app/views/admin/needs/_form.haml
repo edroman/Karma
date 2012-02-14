@@ -1,0 +1,15 @@
+= form_for [:admin, @need] do |f|
+  = render :partial => "error_messages", :locals => { :resource => @need }
+  .field
+    = f.label :user_id
+    = collection_select :need, :user_id, User.all, :id, :name, {:include_blank => true}
+  .field
+    = f.label :body
+    %br/
+    = f.text_field :body
+  .field
+    = f.label :helper
+    = collection_select :need, :helper_id, User.all, :id, :name, {:include_blank => true}
+    %br/
+  .actions
+    = f.submit

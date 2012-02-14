@@ -1,6 +1,0 @@
-= form_for(@query) do |f|
-  = render :partial => "error_messages", :locals => { :resource => @query }
-  .field
-    = f.text_area :question, :placeholder => 'I need help with my startup, the problem is...'
-  .actions
-    = f.submit 'Ask When Ready to Give', :class => 'red_button'

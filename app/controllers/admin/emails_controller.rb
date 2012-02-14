@@ -30,7 +30,7 @@ class Admin::EmailsController < Admin::BaseController
     @email = Email.find(params[:id])
 
     if @email.update_attributes(params[:email])
-      redirect_to admin_email_path(@query), notice: 'Email was successfully updated.'
+      redirect_to admin_email_path(@need), notice: 'Email was successfully updated.'
     else
       render action: "edit"
     end

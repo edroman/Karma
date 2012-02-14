@@ -7,7 +7,8 @@ class CreateUsers < ActiveRecord::Migration
       t.binary :image
       t.string :email
       t.string :member
-      t.boolean :house_rules, :default => false
+      t.string :token
+      t.string :secret
       t.timestamps
     end
   end

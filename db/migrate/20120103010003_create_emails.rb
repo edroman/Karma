@@ -8,7 +8,7 @@ class CreateEmails < ActiveRecord::Migration
       t.boolean :link_clicked
       t.integer :sender_id
       t.integer :receiver_id
-      t.integer :query_id
+      t.integer :need_id
       t.timestamps
     end
   end

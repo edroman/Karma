@@ -19,3 +19,9 @@ if  Rails.env.development?
   # ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor)
   NotifierMailer.register_interceptor(DevelopmentMailInterceptor)
 end
+
+# Global variables
+def max_needs()
+  3
+end
+

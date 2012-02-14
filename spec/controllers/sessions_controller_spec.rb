@@ -55,7 +55,7 @@ describe SessionsController do
 
   describe "#failure" do
     before do
-      @user = Factory :user, :house_rules => true
+      @user = Factory :user
       controller.stub!(:current_user).and_return(@user)
       get :failure
     end

@@ -12,25 +12,25 @@ describe MainController do
       it { should render_template :home }
     end
 
-    describe "logged in with no queries" do
+    describe "logged in with no needs" do
       before do
-        @user = Factory :user, :house_rules => true
+        @user = Factory :user
         controller.stub!(:current_user).and_return(@user)
         get :home
       end
       it { should_not respond_with :success }
-      it { should redirect_to new_query_path }
+      it { should redirect_to new_need_path }
     end
 
-    describe "logged in with an open query" do
+    describe "logged in with a need" do
       before do
-        @user = Factory :user, :house_rules => true
-        @query = Factory :query, :user_id => @user.id, :status => "open"
+        @user = Factory :user
+        @need = Factory :need, :user_id => @user.id
         controller.stub!(:current_user).and_return(@user)
         get :home
       end
       it { should_not respond_with :success }
-      it { should redirect_to thanks_queries_path }
+      it { should redirect_to thanks_needs_path }
     end
   end
 end

@@ -33,8 +33,4 @@ describe "routes for users:" do
     get("/add_your_email").should route_to "users#add_email"
   end
 
-  it "house_rules" do
-    get("/house_rules").should route_to "users#house_rules"
-  end
-
 end

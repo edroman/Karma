@@ -43,30 +43,13 @@ describe User do
            @user.first_name.should == "John" }
     end
 
-    describe "is_mentor?" do
-      it { should respond_to :is_mentor? }
-      it { @user = Factory(:user, :member => "administrators")
-           @user.is_mentor?.should be_true }
-      it { @user = Factory(:user, :member => "mentors")
-           @user.is_mentor?.should be_true }
-      it { @user = Factory(:user, :member => "party guys")
-           @user.is_mentor?.should be_false }
-      it { @user = Factory(:user, :member => nil)
-           @user.is_mentor?.should be_false }
-    end
+    describe "has_needs?" do
+      it { should respond_to :has_needs? }
 
-    describe "has_open_queries?" do
-      it { should respond_to :has_open_queries? }
-
-      describe "user has open queries" do
-        it { @query = Factory :query, :status => "open"
-             @query.user.has_open_queries?.should be_true }
-      end
-
-      describe "user has no open queries" do
-        it { @user.has_open_queries?.should be_false }
-        it { @query = Factory :query, :status => "closed"
-             @query.user.has_open_queries?.should be_false }
+      describe "needs test" do
+        it { @user.has_needs?.should be_false }
+        it { @need = Factory :need
+             @need.user.has_needs?.should be_true }
       end
     end
 

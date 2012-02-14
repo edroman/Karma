@@ -16,18 +16,6 @@ describe UsersController do
     it { should assign_to(:user).with_kind_of(User) }
   end
 
-  describe "#house_rules" do
-    before do
-      @current_user = Factory :user, :house_rules => false
-      controller.stub!(:current_user).and_return(@current_user)
-      get :house_rules
-    end
-    it { should respond_with :success }
-    it { should render_template :house_rules }
-    it { should initialize @user }
-    it { should assign_to(:user).with_kind_of(User) }
-  end
-
   describe "#update" do
     context "valid user" do
       before do
@@ -50,7 +38,7 @@ describe UsersController do
         put :update, { :id => -1, :user => { :email => '' } }
       end
       it { should respond_with :success }
-      it { should render_template :add_email } # Should go back to add_email since updating house rules can't fail.
+      it { should render_template :add_email }
     end
 
   end

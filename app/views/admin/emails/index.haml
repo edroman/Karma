@@ -22,7 +22,7 @@
       %td= email.link_clicked
       %td= email.sender.name
       %td= email.receiver.name
-      %td= email.query.question
+      %td= email.need.body
       %td= link_to 'Show', admin_email_path(email)
       %td= link_to 'Edit', edit_admin_email_path(email)
       %td= link_to 'Destroy', admin_email_path(email), :confirm => 'Are you sure?', :method => :delete

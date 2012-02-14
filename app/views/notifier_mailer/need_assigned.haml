@@ -1,0 +1,21 @@
+%p
+- if !@need.helper.name.nil?
+  Hi #{@need.helper.first_name},
+- else
+  Hi,
+%p
+  Your friend #{@need.user.name} has posted the following need on Karma.  We thought you'd be a possible fit to help.
+%p
+  Do you have time to help out?
+%p
+  Please reply to this email to send your friend a message!  Here is the need that was posted:
+%p
+%p
+  #{@need.body}
+%p
+%p
+%p
+  PS: if you're not getting the help you need (or run into a bug,) let us know by emailing: edward.w.roman@gmail.com
+%p
+  Best,
+  Ed Roman
