@@ -12,8 +12,8 @@ Administrative View: Showing Need
   %b Body:
   = @need.body
 %p
-  %b Helper:
-  = @need.helper.try(:name)
+  %b Mentor:
+  = @need.mentor.try(:name)
 
 = link_to 'Edit', edit_admin_need_path(@need)
 |

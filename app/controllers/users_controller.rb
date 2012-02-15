@@ -7,16 +7,17 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  # this update method applies to the add_email form
+  # this update method applies to the add_email and new_need form
   def update
     @user = current_user
 
     # If the PUT parameters validate into usable fields for "user"...
     if (@user && @user.update_attributes(params[:user]))
       redirect_to root_path, :notice => "Success! w00t w00t!"
-    # If there's an error, then it must have come from the add_email form since that actually has fields.
+    # If there's an error, then it must have come from the add_email or new_need form since that actually has fields.
     else
-      render action: "add_email"
+      # TODO: This is a hack.. need to probably break this controller out into multiple controllers to solve this with intelligent errors.
+      redirect_to :back, :notice => "Form has errors - please try again."
     end
   end
 

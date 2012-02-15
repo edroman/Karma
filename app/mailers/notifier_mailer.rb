@@ -17,7 +17,7 @@ class NotifierMailer < ActionMailer::Base
          :body => "User: #{user.name}\nEmail: #{user.email}\nNeeds: #{user.needs}")
   end
 
-  # When a helper has been assigned a need, send an email TO the user FROM the user
+  # When a mentor has been assigned a need, send an email TO the user FROM the user
   def need_assigned(need)
 
     # Populate member variable so that the view can access it
@@ -29,7 +29,7 @@ class NotifierMailer < ActionMailer::Base
 
     # Send out email.  Body comes from template.
     result = mail(:from => address.to_s,
-                  :to => need.helper.email,
+                  :to => need.mentor.email,
                   :subject => "One of your friends could use your help!")
 
     # Create email object in database and persist it
@@ -38,7 +38,7 @@ class NotifierMailer < ActionMailer::Base
     email.body_plain = result.body
     email.body_html = result.body
     email.sender_id = need.user.id
-    email.receiver_id =need.helper.id
+    email.receiver_id =need.mentor.id
     email.need_id = need.id
     email.save
 

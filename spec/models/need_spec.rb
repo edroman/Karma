@@ -8,7 +8,7 @@ describe Need do
 
   describe "associations" do
     it { should belong_to :user }
-    it { should belong_to :helper }
+    it { should belong_to :mentor }
     it { should have_many :emails }
   end
 
@@ -22,7 +22,7 @@ describe Need do
 
   describe "attributes" do
     it { should respond_to :user_id }
-    it { should respond_to :helper_id }
+    it { should respond_to :mentor_id }
     it { should respond_to :body }
   end
 

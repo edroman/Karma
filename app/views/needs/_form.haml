@@ -3,8 +3,8 @@
   = user_form.fields_for :needs do |needs_form|
     = needs_form.label :body, "Need"
     = needs_form.text_area :body, :rows => 3
-    = needs_form.check_box :_destroy
-    = needs_form.label :_destroy, "Remove Need"
+    -# = needs_form.check_box :_destroy
+    -# = needs_form.label :_destroy, "Remove Need"
     %p
   .actions
     = user_form.submit 'Submit', :class => 'red_button'

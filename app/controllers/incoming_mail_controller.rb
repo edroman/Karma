@@ -21,7 +21,7 @@ class IncomingMailController < ActionController::Base
     # Send the email to the recipient
     # TODO: Figure out whether we should be doing body-html, not just body-plain
     from_address = MangledEmailAddress.new
-    from_address.populate_from_params(mangled_address.need, from_user, !mangled_address.is_from_helper)
+    from_address.populate_from_params(mangled_address.need, from_user, !mangled_address.is_from_mentor)
     NotifierMailer.forward_reply(from_user, to_user, from_address, params[:subject], params["body-plain"], mangled_address.need).deliver
 
     # Return an HTTP Status OK 200 message to the mail server that sent us the POST request, since otherwise

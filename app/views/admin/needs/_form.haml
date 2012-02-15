@@ -7,9 +7,9 @@
     = f.label :body
     %br/
     = f.text_field :body
-  .field
-    = f.label :helper
-    = collection_select :need, :helper_id, User.all, :id, :name, {:include_blank => true}
-    %br/
+  -# .field
+  -#  = f.label :mentor
+  -#  = collection_select :need, :mentor_id, User.all, :id, :name, {:include_blank => true}
+  -#  %br/
   .actions
     = f.submit
