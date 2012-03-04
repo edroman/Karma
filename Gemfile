@@ -1,11 +1,17 @@
 source 'http://rubygems.org'
 
+# NOTE: This has only been tested on Ruby 1.9.2.  Ruby 1.9.3 has some issues since the debugger doesn't work yet.'
+
 gem 'rails', '3.1.3'
 #gem 'rake', '0.8.7'
 gem 'rake', '0.9.2.2' # version set for debugging rspec within RubyMine generating a "missing constant RDoc" error
 gem 'haml-rails' # TODO: DELETE
 gem 'slim'
 gem 'eventmachine', '1.0.0.beta.2' # version set for windows compatibility
+
+#require 'v8' # required for ubuntu
+#gem 'execjs' # required for ubuntu
+#gem 'therubyracer' # required for Ubuntu
 
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
@@ -38,7 +44,17 @@ group :test do
 end
 
 group :development, :test do
+#  gem 'ruby-debug19', :require => 'ruby-debug'
+# For ubuntu:
+#gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-p#{RUBY_PATCHLEVEL}/gems/linecache19-0.5.13/"
+  gem 'linecache19'
+#gem 'ruby-debug-base19', '0.11.26', :path => "~/.rvm/gems/ruby-1.9.3-p#{RUBY_PATCHLEVEL}/gems/ruby-debug-base19-0.11.26/"
+  gem 'ruby-debug-base19'
   gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'pry'
+#  gem 'pry-remote'
+#  gem 'pry-nav'
+
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'rspec-rails', '2.7.0'  # RubyMine's rake isn't compatible with the newest version of rspec

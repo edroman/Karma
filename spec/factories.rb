@@ -1,19 +1,25 @@
-Factory.define :user do |f|
-  f.name        { Faker::Name.name }
-  f.email       { Faker::Internet.email }
-  f.provider    { "twitter" }
-  f.uid         { 1_000_000 + Random.rand(10_000_000 - 1_000_000) }
+FactoryGirl.define do
+  factory :user do
+    name        { Faker::Name.name }
+    email       { Faker::Internet.email }
+    provider    { "twitter" }
+    uid         { 1_000_000 + Random.rand(10_000_000 - 1_000_000) }
+  end
 end
 
-Factory.define :need do |f|
-  f.association :user
-  f.body    { "I need help hiring someone." }
+FactoryGirl.define do
+  factory :need do
+    association :user
+    body    { "I need help hiring someone." }
+  end
 end
 
-Factory.define :email do |f|
-  f.association :sender, :factory => :user
-  f.association :receiver, :factory => :user
-  f.association :need
-  f.subject     { "Need Help!" }
-  f.body        { "I need help hiring someone." }
+FactoryGirl.define do
+  factory :email do
+    association :sender, :factory => :user
+    association :receiver, :factory => :user
+    association :need
+    subject     { "Need Help!" }
+    body        { "I need help hiring someone." }
+  end
 end

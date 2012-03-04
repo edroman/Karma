@@ -22,6 +22,6 @@ end
 
 # Global variables
 def max_needs()
-  3
+  1
 end
 
